@@ -20,17 +20,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="favicon.ico" />
 
   <!-- Put your site title here -->
   <title>
-    Prashul Shrestha | Software Developer & App Developer.
+    Prashul Shrestha
   </title>
 
   <meta name="description" content="Add small description of yourslef.">
   <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
   <meta name="keywords" content="Prashul, Java, App Developer, Angular, Flutter" />
   <link rel="stylesheet" href="index.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 
 <body>
@@ -39,8 +41,17 @@
   <!-- ***** Header ***** -->
 
   <header class="header" role="banner" id="top">
-    <div class="row">
+    <div class="row nav__logo-holder">
+      <div class="nav__logo">
+        <a href="#">
+          <img src="./images/PS LOGO.svg" height="auto" width="100%" />
+        </a>
+      </div>
+      <span class="nav__gap"></span>
       <nav class="nav" role="navigation">
+        <button class="sidebar-toggle">
+          <span class="material-icons">menu</span>
+        </button>
         <ul class="nav__items">
           <li class="nav__item"><a href="#About" class="nav__link">About</a></li>
           <li class="nav__item"><a href="#history" class="nav__link">Timeline</a></li>
@@ -141,6 +152,22 @@
               </h3>
               <h4>Bachelor's of Computer Science</h4>
               <p><i> St. Cloud State University<br>August 2016 - May 2021</i></p>
+              <ul>
+                <li>
+                  Courseworks: Coursework: Object-Oriented Software Design (T.A),
+                  Database Theory & Design, Systems Programming, Computer Network,
+                  Mobile App Dev I & II (L.A), Software Engineering I & II,
+                  Operating Systems, Database Theroy & Design;
+                </li>
+                <li>
+                  President & Vice-President: <a href="https://csciclub.github.io" target="_blank">Computer Science Club
+                    (Spring 2019 & Fall 2020)</a>
+                </li>
+                <li>
+                  Graphic Designer: <a href="https://fb.com/helpingnepalinternational" target="_blank">Helping Nepal
+                    International (Fall 2017)</a>
+                </li>
+              </ul>
             </div>
           </div>
           <div class="history__container right">
@@ -151,6 +178,21 @@
               <h4>IT Innovation and Developer 👨🏽‍💻</h4>
               <p><i><a href="http://huskytech.com">St. Cloud State University - HuskyTech</a><br>November 2019 -
                   Present</i></p>
+              <ul>
+                <li>
+                  Build intents using Lambda for the university Alexa Skills to improve student interaction and
+                  engagement.
+                </li>
+                <li>
+                  Incorporated Alexa Skill used by 12,000+ students around the university through AWS Lambda functions.
+                </li>
+                <li>
+                  Improvised response time of Alexa by 12% by optimizing node functions and database caching.
+                </li>
+                <li>
+                  <strong>Tools:</strong> AWS, Lambda Function, DyanamoDB, S3 Bucket, Node.js
+                </li>
+              </ul>
             </div>
           </div>
           <div class="history__container right">
@@ -161,6 +203,16 @@
               <h4>Software Engineer Internship 👨🏽‍💻</h4>
               <p><i><a href="http://rbcwealthmanagement.com">RBC Wealth Management</a>
                   <br>June 2020 - August 2020</i></p>
+              <ul>
+                <li>Developed and deployed an automated release notes tool increasing
+                  productivity by 75% to diagnose modifications & errors in the internal metaphysics model.</li>
+                <li>Worked effectively on a large-scale project with 150,000 lines of code to fix existing software
+                  bugs.</li>
+                <li>Hands-on experience with JDBC SQL database queries & full software development life-cycle.</li>
+                <li>Implemented 96% coverage unit tests with Junit to deploy production-quality and scalable
+                  applications.</li>
+                <li><strong>Tools:</strong> IntelliJ, Java11, JUnit, Microsoft SQL, Gradle, Jenkins</li>
+              </ul>
             </div>
           </div>
           <div class="history__container right">
@@ -170,6 +222,24 @@
               </h3>
               <h4>Software Developer Internship 👨🏽‍💻</h4>
               <p><i><a href="http://geocomm.com">GeoComm Inc.</a><br>May 2016 - August 2021</i></p>
+              <ul>
+                <li>
+                  Implemented UI features to customize the
+                  web dashboard which increased customer satisfaction by 25%.
+                </li>
+                <li>
+                  Worked independently to understand requirements and deliver results aligned with project goals.
+                </li>
+                <li>
+                  Scripted server-side script to monitor SNMP traps in the ad-hoc call routing feature.
+                </li>
+                <li>
+                  Gained exposure to sprint-based Agile project planning and delivery process.
+                </li>
+                <li>
+                  <strong>Tools:</strong> Angular 8, HTML5/CSS, Python, .Net C#, AWSS
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -213,7 +283,6 @@
               <img src="./images/project-1.png" class="work__image" alt="Project 1" />
             </div>
           </div>
-        </div>
 
         <div class="work__box">
           <div class="work__text">
@@ -292,7 +361,7 @@
           <img src="./images/chippy.png" class="client__logo" alt="Company 1" />
         </div>
       </div>
-    </section> -->  
+    </section> -->
   </main>
 
 
@@ -350,12 +419,6 @@
       <p>
         &copy; 2020 - Made with 💛 by <a href="https://nisar.dev" class="link">Nisar</a>.
       </p>
-      <div class="footer__github-buttons">
-        <iframe
-          src="https://ghbtns.com/github-btn.html?user=nisarhassan12&repo=portfolio-template&type=watch&count=true"
-          frameborder="0" scrolling="0" width="170" height="20" title="Watch Portfolio Template on GitHub">
-        </iframe>
-      </div>
     </div>
   </footer>
 

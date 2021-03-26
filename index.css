@@ -343,11 +343,25 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Navigation ----- */
 /* --------------------------------------- */
+.nav__logo-holder {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+}
 
+.nav__logo {
+  max-width: 100px;
+  -webkit-box-align: center;
+}
+
+.nav__gap {
+  flex: 0 5 auto;
+}
 .nav {
   display: flex;
   justify-content: flex-end;
   padding: var(--gutter-normal) 0;
+  flex: 5 0 auto;
 }
 
 .nav__items {
@@ -357,6 +371,13 @@ body:not(.user-is-tabbing) a:focus {
 
 .nav__item:not(:last-child) {
   margin-right: var(--gutter-medium);
+  transition: all .1s ease;
+}
+
+@media (max-width: 700px) {
+  .nav__item:not(:last-child) {
+    margin-right: var(--gutter-small);
+    }
 }
 
 @media (max-width: 500px) {
@@ -408,6 +429,62 @@ body:not(.user-is-tabbing) a:focus {
   background: var(--pink);
 }
 
+/* Hamburger Toggle Button */
+.sidebar-toggle {
+  top: 2rem;
+  right: 3rem;
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color: hsl(22, 78%, 60%);
+  transition: all 0.3s linear;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.sidebar-toggle:hover {
+  color: hsl(205, 90%, 76%);
+}
+
+/* Sidebar Nav */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.close-btn {
+  font-size: 1.75rem;
+  background: transparent;
+  border-color: transparent;
+  color: hsl(205, 78%, 60%);
+  transition: all 0.3s linear;
+  cursor: pointer;
+  color: hsl(360, 67%, 44%);
+}
+
+.show-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 1rem;
+  box-shadow: hsl(360, 67%, 44%);
+  transition: all 0.3s linear;
+  transform: translate(100%);
+}
+
+@media screen and (min-width: 676px) {
+  .nav {
+    width: 400px;
+  }
+}
+
 /* --------------------------------------- */
 /* ----- Header ----- */
 /* --------------------------------------- */
@@ -455,8 +532,10 @@ body:not(.user-is-tabbing) a:focus {
 .header__footer {
   bottom: 0;
   right: 0;
-  padding: 0 var(--gutter-small-1);
+  padding: 0 var(--gutter-medium);
   position: absolute;
+  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease-out;
 }
 
 @media (max-width: 900px) {
@@ -470,6 +549,20 @@ body:not(.user-is-tabbing) a:focus {
     flex: 1;
     margin: 0 var(--gutter-huge) 0 0;
   }
+  
+}
+
+@media (min-width: 768px) {
+  .header__text {
+    transform: translateY(-25%);
+  }
+}
+
+
+@media (max-width: 500px) {
+  .header__footer {
+    right: auto;
+  }
 }
 
 @media (max-width: 500px) {
@@ -477,9 +570,13 @@ body:not(.user-is-tabbing) a:focus {
     text-align: center;
   }
 
+  .header__text {
+    transform: translateY(-25%);
+  }
   .header__text p {
     transform: scale(0.8);
   }
+  
 }
 
 /* --------------------------------------- */
@@ -502,7 +599,7 @@ body:not(.user-is-tabbing) a:focus {
   margin-bottom: var(--gutter-normal);
 }
 
-.about__text p a:hover{
+.about__text p a:hover {
   color: #ff3258;
 }
 
@@ -585,7 +682,7 @@ body:not(.user-is-tabbing) a:focus {
   position: relative;
   border-radius: 6px;
   border: thin solid #ff3258;
-  transition: background-color .5s ease-in, border-color .5s ease-out ;
+  transition: background-color 0.5s ease-in, border-color 0.5s ease-out;
 }
 
 .content:hover {
@@ -602,6 +699,10 @@ body:not(.user-is-tabbing) a:focus {
 
 .content p {
   margin: var(--gutter-small-small) 0;
+}
+
+.content ul {
+  padding-inline-start: 40px;
 }
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
@@ -661,7 +762,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .work__box:not(:last-child) {
-  margin-bottom: 25rem;
+  margin-bottom: var(--gutter-medium);
 }
 
 @media (max-width: 500px) {
@@ -785,5 +886,10 @@ body:not(.user-is-tabbing) a:focus {
 @media (max-width: 500px) {
   .footer {
     padding: var(--gutter-medium) 0;
+  }
+
+  .footer__social-links {
+    width: 70%;
+    float: right;
   }
 }
