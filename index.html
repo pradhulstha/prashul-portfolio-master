@@ -1,15 +1,3 @@
-<!-- 
-  Hello 😊.
-
-  This template is designed and developed by Nisar Hassan Naqvi
-  for anyone to use for free or customize the way they like.
-
-  Github Repo: https://github.com/nisarhassan12/portfolio-template/
-  My Website: https://nisar.dev
-
-  For business & inquires, contact me => syednisarhassan12@gmail.com
--->
-
 <!--
   Follow the instructions written in comments to create your stunning portfolio
 
@@ -25,17 +13,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+  <link rel="canonical" href="https:prashulshrestha.me" />
+  <link rel="shortcut icon" type="image/png" href="./images/favicon_io/favicon.ico" />
 
   <!-- Put your site title here -->
   <title>
-    Prashul Shrestha | Software Developer & App Developer.
+    Prashul Shrestha
   </title>
 
-  <meta name="description" content="Add small description of yourslef.">
+  <meta name="description" content="Add small description of yourself.">
   <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
   <meta name="keywords" content="Prashul, Java, App Developer, Angular, Flutter" />
   <link rel="stylesheet" href="index.css" />
+  <meta property="og:url" content="https://prashulshrestha.me" />
+  <meta property="og:site_name" content="Prashul Shrestha" />
+  <meta property="og:title" content="Prashul Shrestha | portfolio" />
+  <meta property="og:description" content="Personal Portfolio" />
+  <meta property="og:type" content="website" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Animation -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 
 <body>
@@ -44,7 +42,15 @@
   <!-- ***** Header ***** -->
 
   <header class="header" role="banner" id="top">
-    <div class="row">
+    <div class="row nav__bar">
+      <div class="nav__logo">
+        <a href="#">
+          <img src="./images/PS LOGO.svg" height="auto" width="100%" />
+        </a>
+      </div>
+      <button class="sidebar-toggle">
+        <span class="material-icons">menu</span>
+      </button>
       <nav class="nav" role="navigation">
         <ul class="nav__items">
           <li class="nav__item"><a href="#About" class="nav__link">About</a></li>
@@ -58,9 +64,21 @@
         </ul>
       </nav>
     </div>
+   
+    <nav class="mobile__nav animate__bounceIn" role="navigation">
+      <div class="mobile__nav-container">
+        <ul class="mobile__nav__items">
+          <li class="mobile__nav__item"><a href="#About" class="nav__link">About</a></li>
+          <li class="mobile__nav__item"><a href="#history" class="nav__link">Timeline</a></li>
+          <li class="mobile__nav__item"><a href="#Work" class="nav__link">Projects</a></li>
+          <li class="mobile__nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
     <div class="header__text-box row">
       <div class="header__text">
-        <h1 class="heading-primary">
+        <h1 class="heading-primary animate__animated animate__heartBeat">
           <!-- Replace the following name with your name -->
           <span class="red">Howdy,</span>
           <span>I'm Prashul</span>
@@ -84,15 +102,17 @@
             <img src="./images/github.svg" class="footer__social-image" alt="Github">
           </a>
         </li>
+        <!-- 
         <li class="footer__social-link-item">
-          <a href="https://codepen.io/prashul_shrestha" title="Link to Codepen Profile">
-            <img src="./images/codepen.svg" class="footer__social-image" alt="Codepen">
+          <a href="https://codepen.io/prashul_shrestha" title="Link to CodePen Profile">
+            <img src="./images/codepen.svg" class="footer__social-image" alt="CodePen">
           </a>
-        </li>
+        </li> 
+        -->
         <li class="footer__social-link-item">
           <a href=https://www.linkedin.com/in/prashul-shrestha/">
-            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image"
-              alt="Linkedin">
+            <img src="./images/linkedin.svg" title="Link to LinkedIn Profile" class="footer__social-image"
+              alt="LinkedIn">
           </a>
         </li>
       </ul>
@@ -105,7 +125,7 @@
 
     <section class="about" id="about">
       <div class="row">
-        <h2>About Me</h2>
+        <h2 class="animate__animated animate__fadeInLeft">About Me</h2>
         <div class="about__content">
           <div class="about__text">
             <!-- Replace the below paragraph with info about yourself -->
@@ -115,7 +135,7 @@
               My name is Prashul and I'm a student completing my
               Bachelor's of Computer Science at <a href="https://www.stcloudstate.edu/">
                 St. Cloud State University</a>.
-              I started learn programming since I was Grade 8 and since then, I
+              I started learning programming since I was Grade VII and since then, I
               have been in love with programming. I believe everyone has to equal
               rights to have access to technology and opportunities so I am very passionate
               about providing opportunities to my under-developed country, Nepal.
@@ -142,20 +162,30 @@
           <div class="history__container right">
             <div class="content">
               <h3>
-                <l>Education 🎓</l>
-              </h3>
-              <h4>Bachelor's of Computer Science</h4>
-              <p><i> St. Cloud State University<br>August 2016 - May 2021</i></p>
-            </div>
-          </div>
-          <div class="history__container right">
-            <div class="content">
-              <h3>
                 <l>On-Campus Job 🎒</l>
               </h3>
               <h4>IT Innovation and Developer 👨🏽‍💻</h4>
               <p><i><a href="http://huskytech.com">St. Cloud State University - HuskyTech</a><br>November 2019 -
                   Present</i></p>
+              <ul>
+                <li>
+                  Build intents using Lambda for the university Alexa Skills to improve student interaction and
+                  engagement.
+                </li>
+                <li>
+                  Incorporated Alexa Skill used by 12,000+ students around the university through AWS Lambda functions.
+                </li>
+                <li>
+                  Improvised response time of Alexa by 12% by optimizing node functions and database caching.
+                </li>
+                <li>
+                  <strong>Tools:</strong> AWS, Lambda Function, DynamoDB, S3 Bucket, Node.js
+                </li>
+              </ul>
+              <a href="https://github.com/pradhulstha/CustomizableDashboard" title="View Source Code" target="_blank">
+                <img src="./images/github.svg" class="work__code" alt="GitHub">
+              </a>
+
             </div>
           </div>
           <div class="history__container right">
@@ -166,6 +196,16 @@
               <h4>Software Engineer Internship 👨🏽‍💻</h4>
               <p><i><a href="http://rbcwealthmanagement.com">RBC Wealth Management</a>
                   <br>June 2020 - August 2020</i></p>
+              <ul>
+                <li>Developed and deployed an automated release notes tool increasing
+                  productivity by 75% to diagnose modifications & errors in the internal metaphysics model.</li>
+                <li>Worked effectively on a large-scale project with 150,000 lines of code to fix existing software
+                  bugs.</li>
+                <li>Hands-on experience with JDBC SQL database queries & full software development life-cycle.</li>
+                <li>Implemented 96% coverage unit tests with Junit to deploy production-quality and scalable
+                  applications.</li>
+                <li><strong>Tools:</strong> IntelliJ, Java11, JUnit, Microsoft SQL, Gradle, Jenkins</li>
+              </ul>
             </div>
           </div>
           <div class="history__container right">
@@ -175,12 +215,74 @@
               </h3>
               <h4>Software Developer Internship 👨🏽‍💻</h4>
               <p><i><a href="http://geocomm.com">GeoComm Inc.</a><br>May 2016 - August 2021</i></p>
+              <ul>
+                <li>
+                  Implemented UI features to customize the
+                  web dashboard which increased customer satisfaction by 25%.
+                </li>
+                <li>
+                  Worked independently to understand requirements and deliver results aligned with project goals.
+                </li>
+                <li>
+                  Scripted server-side script to monitor SNMP traps in the ad-hoc call routing feature.
+                </li>
+                <li>
+                  Gained exposure to sprint-based Agile project planning and delivery process.
+                </li>
+                <li>
+                  <strong>Tools:</strong> Angular 8, HTML5/CSS, Python, .Net C#, AWS
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ********** Education ************* -->
+    <section class="education" id="education">
+      <div class="row">
+        <div class="education__container">
+          <h2>
+            <l>Education 🎓</l>
+          </h2>
+          <div class="education__content">
+            <div id="scsu" class="job__title">
+              <h3>St. Cloud State University</h3>
+            </div>
+            <div class="job__info">
+              <p class="job__time"><span class="icon material-icons" id="date">date_range</span>August 2016 - May 2021
+              </p>
+              <p class="job__loc"><span class="icon material-icons" id="date">pin_drop</span>St. Cloud MN</p>
+              <p class="job__url"><span class="icon material-icons" id="link">launch</span> <a
+                  href="https://stcloudstate.edu" target="_blank">stcloudstate.edu</a></p>
+              <p class="job__degree"><span class="icon material-icons" id="star">star_outline</span>Bachelor's of
+                Computer Science</p>
+            </div>
+            <ul class="job__content">
+              <li>
+                Coursework: Coursework: Object-Oriented Software Design (T.A),
+                Database Theory & Design, Systems Programming, Computer Network,
+                Mobile App Dev I & II (L.A), Software Engineering I & II,
+                Operating Systems, Database Theory & Design;
+              </li>
+              <li>
+                President & Vice-President: Computer Science Club
+                (Spring 2019 & Fall 2020)<a href="https://csciclub.github.io" target="_blank"><span
+                    class="material-icons" id="text-link">
+                    launch</span>csciclub.github.io</a>
+
+              </li>
+              <li>
+                Graphic Designer: <a href="https://fb.com/helpingnepalinternational" target="_blank"> <span
+                    class="material-icons" id="text-link">launch</span>Helping Nepal
+                  International (Fall 2017)</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ******************************************* -->
     <!-- ***** Work (Projects) ***** -->
@@ -194,22 +296,21 @@
 
           <div class="work__box">
             <div class="work__text">
-              <h3>Portfolio Template</h3>
+              <h3>Expense Tracker</h3>
               <p>
-                A free Open Source Portfolio for anyone to use for free.
+                A free Open Source Expense Tracker to help users track expenses.
               </p>
               <ul class="work__list">
-                <li>HTML</li>
-                <li>SCSS</li>
-                <li>JavaScript</li>
-                <li>Parcel</li>
+                <li>Angular8</li>
+                <li>Spring Boot</li>
+                <li>Database: SQL</li>
               </ul>
 
               <div class="work__links">
-                <a href="https://nisar.surge.sh" target="_blank" class="link__text">
+                <a href="#" target="_blank" class="link__text">
                   Visit Site <span>&rarr;</span>
                 </a>
-                <a href="https://github.com/nisarhassan12/portfolio" title="View Source Code" target="_blank">
+                <a href="https://github.com/pradhulstha/expense_tracker" title="View Source Code" target="_blank">
                   <img src="./images/github.svg" class="work__code" alt="GitHub">
                 </a>
               </div>
@@ -220,23 +321,22 @@
           </div>
           <div class="work__box">
             <div class="work__text">
-              <h3>Calculator</h3>
+              <h3>Nutritionact</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-                eius.
+                A cross-platform mobile app (Android & iOS) for users to get nutritional data of
+                any food using ML Image Recognition.
               </p>
               <ul class="work__list">
-                <li>React</li>
-                <li>Next.js</li>
-                <li>Node</li>
-                <li>MongoDB</li>
+                <li>Flutter by Google</li>
+                <li>Firebase RDBMS</li>
+                <li>Machine Learning Kit</li>
               </ul>
 
               <div class="work__links">
-                <a href="#" class="link__text">
+                <!-- <a href="https://github.com/pradhulstha/Nutritionact" class="link__text">
                   Visit Site <span>&rarr;</span>
-                </a>
-                <a href="#">
+                </a> -->
+                <a href="https://github.com/pradhulstha/Nutritionact">
                   <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
                 </a>
               </div>
@@ -248,23 +348,21 @@
 
           <div class="work__box">
             <div class="work__text">
-              <h3>Notificator</h3>
+              <h3>Warehouse</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-                eius.
+                Full user-end Warehouse system built utilizing all the Object Oriented Design Process including
+                Use Cases, Conceptual Classes, Sequence Diagrams & Class Diagrams.
               </p>
               <ul class="work__list">
-                <li>React</li>
-                <li>Next.js</li>
-                <li>Node</li>
-                <li>MongoDB</li>
+                <li>Java11</li>
               </ul>
 
               <div class="work__links">
                 <a href="#" class="link__text">
                   Visit Site <span>&rarr;</span>
                 </a>
-                <a href="#">
+                <a href="https://github.com/pradhulstha/warehouse">
+
                   <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
                 </a>
               </div>
@@ -286,7 +384,7 @@
       <div class="row">
         <h2>Clients</h2>
         <div class="client__logos">
-          Add logos of the clients or companies you'have worked with.
+          Add logos of the clients or companies you have worked with.
           <img src="./images/ronjones.png" class="client__logo" alt="Company 2" />
           <img src="./images/goldengrid.png" class="client__logo" alt="Company 3" />
           <img src="./images/bullseye.png" class="client__logo" alt="Company 1" />
@@ -337,14 +435,14 @@
           </a>
         </li>
         <li class="footer__social-link-item">
-          <a href="https://codepen.io/prashul_shrestha" title="Link to Codepen Profile">
-            <img src="./images/codepen.svg" class="footer__social-image" alt="Codepen">
+          <a href="https://codepen.io/prashul_shrestha" title="Link to CodePen Profile">
+            <img src="./images/codepen.svg" class="footer__social-image" alt="CodePen">
           </a>
         </li>
         <li class="footer__social-link-item">
           <a href=https://www.linkedin.com/in/prashul-shrestha/">
-            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image"
-              alt="Linkedin">
+            <img src="./images/linkedin.svg" title="Link to LinkedIn Profile" class="footer__social-image"
+              alt="LinkedIn">
           </a>
         </li>
       </ul>
@@ -353,12 +451,6 @@
       <p>
         &copy; 2020 - Made with 💛 by <a href="https://nisar.dev" class="link">Nisar</a>.
       </p>
-      <div class="footer__github-buttons">
-        <iframe
-          src="https://ghbtns.com/github-btn.html?user=nisarhassan12&repo=portfolio-template&type=watch&count=true"
-          frameborder="0" scrolling="0" width="170" height="20" title="Watch Portfolio Template on GitHub">
-        </iframe>
-      </div>
     </div>
   </footer>
 

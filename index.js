@@ -41,3 +41,34 @@ window.addEventListener("scroll", () => {
     alterStyles(isBackToTopRendered);
   }
 });
+
+
+// Side-Bar Toggle
+const toggleBtn =document.querySelector('.sidebar-toggle');
+const sidebar =document.querySelector('.mobile__nav');
+
+toggleBtn.addEventListener('click', function(){
+  // using add and remove class
+  /*
+  if(sidebar.classList.contains('show-sidebar')){
+      sidebar.classList.remove('show-sidebar');
+  }else{
+      sidebar.classList.add('.show-sidebar');
+  }
+  */
+  //using toggle
+   sidebar.classList.toggle('show__mobile-nav');
+  lockScroll();
+
+});
+
+function lockScroll() {
+
+  if(document.documentElement.style.overflow == "hidden"){
+      document.documentElement.style.overflow = "scroll";
+  }else{
+    document.documentElement.style.overflow = "hidden";
+  }
+}
+
+
