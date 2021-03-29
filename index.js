@@ -45,7 +45,8 @@ window.addEventListener("scroll", () => {
 
 // Side-Bar Toggle
 const toggleBtn =document.querySelector('.sidebar-toggle');
-const sidebar =document.querySelector('.nav');
+const sidebar =document.querySelector('.mobile__nav');
+
 toggleBtn.addEventListener('click', function(){
   // using add and remove class
   /*
@@ -56,5 +57,18 @@ toggleBtn.addEventListener('click', function(){
   }
   */
   //using toggle
-  sidebar.classList.toggle('show-nav');
+   sidebar.classList.toggle('show__mobile-nav');
+  lockScroll();
+
 });
+
+function lockScroll() {
+
+  if(document.documentElement.style.overflow == "hidden"){
+      document.documentElement.style.overflow = "scroll";
+  }else{
+    document.documentElement.style.overflow = "hidden";
+  }
+}
+
+
