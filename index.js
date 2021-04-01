@@ -3,23 +3,22 @@
  ---------------------------------------- */
 
 const handleFirstTab = (e) => {
-  if(e.key === 'Tab') {
-    document.body.classList.add('user-is-tabbing')
+  if (e.key === "Tab") {
+    document.body.classList.add("user-is-tabbing");
 
-    window.removeEventListener('keydown', handleFirstTab)
-    window.addEventListener('mousedown', handleMouseDownOnce)
+    window.removeEventListener("keydown", handleFirstTab);
+    window.addEventListener("mousedown", handleMouseDownOnce);
   }
-
-}
+};
 
 const handleMouseDownOnce = () => {
-  document.body.classList.remove('user-is-tabbing')
+  document.body.classList.remove("user-is-tabbing");
 
-  window.removeEventListener('mousedown', handleMouseDownOnce)
-  window.addEventListener('keydown', handleFirstTab)
-}
+  window.removeEventListener("mousedown", handleMouseDownOnce);
+  window.addEventListener("keydown", handleFirstTab);
+};
 
-window.addEventListener('keydown', handleFirstTab)
+window.addEventListener("keydown", handleFirstTab);
 
 const backToTopButton = document.querySelector(".back-to-top");
 let isBackToTopRendered = false;
@@ -33,21 +32,28 @@ let alterStyles = (isBackToTopRendered) => {
 };
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 700) {
-    isBackToTopRendered = true;
-    alterStyles(isBackToTopRendered);
-  } else {
-    isBackToTopRendered = false;
-    alterStyles(isBackToTopRendered);
+  var sw = true;
+  if (sw) {
+    sw = false;
+    setTimeout(function () {
+      if (window.scrollY > 700) {
+        isBackToTopRendered = true;
+        alterStyles(isBackToTopRendered);
+      } else {
+        isBackToTopRendered = false;
+        alterStyles(isBackToTopRendered);
+      }
+    });
   }
 });
 
-
 // Side-Bar Toggle
-const toggleBtn =document.querySelector('.sidebar-toggle');
-const sidebar =document.querySelector('.mobile__nav');
+const toggleBtn = document.querySelector(".sidebar-toggle");
+const sidebar = document.querySelector(".mobile__nav");
 
-toggleBtn.addEventListener('click', function(){
+toggleBtn.addEventListener("click", openCloseMenu);
+
+function openCloseMenu() {
   // using add and remove class
   /*
   if(sidebar.classList.contains('show-sidebar')){
@@ -57,18 +63,80 @@ toggleBtn.addEventListener('click', function(){
   }
   */
   //using toggle
-   sidebar.classList.toggle('show__mobile-nav');
+  sidebar.classList.toggle("show__mobile-nav");
+  toggleBtn.classList.toggle("vlt-menu-burger--opened");
   lockScroll();
-
-});
+}
 
 function lockScroll() {
-
-  if(document.documentElement.style.overflow == "hidden"){
-      document.documentElement.style.overflow = "scroll";
-  }else{
+  if (document.documentElement.style.overflow == "hidden") {
+    document.documentElement.style.overflow = "scroll";
+  } else {
     document.documentElement.style.overflow = "hidden";
   }
 }
 
+// Close the Menu when clicked on Mobile Device
+document.querySelector(".mobile__nav").addEventListener("click", function () {
+  openCloseMenu();
+});
 
+// Show More Btn for Each Timeline Card
+let elePosY, elePosX;
+// Getting Vertical Scroll Position
+var supportPageOffset = window.pageXOffset !== undefined;
+var isCSS1Compat = (document.compatMode || "") === "CSS1Compat";
+
+document.querySelectorAll(".history__content").forEach(function (e) {
+  e.querySelector("#more-btn").addEventListener("click", function () {
+    var dots = e.querySelector("#dots");
+    var moreText = e.querySelector("#more-points");
+    var moreBtn = e.querySelector("#more-btn");
+
+    if (dots.style.display === "none") {
+      // The More Content is Shown
+      dots.style.display = "inline";
+      moreBtn.innerHTML = "keyboard_arrow_down";
+      moreText.style.display = "none";
+      window.scrollTo({
+        top: elePosY,
+        left: elePosX,
+        behavior: "smooth",
+      });
+    } else {
+      // The More Content is Hidden
+      dots.style.display = "none";
+      moreBtn.innerHTML = "keyboard_arrow_up";
+      moreText.style.display = "inline";
+
+      // Get the Y & X Coordinates to scroll back after reading
+      elePosY = supportPageOffset
+        ? window.pageYOffset
+        : isCSS1Compat
+        ? document.documentElement.scrollTop
+        : document.body.scrollTop;
+      elePosX = supportPageOffset
+        ? window.pageXOffset
+        : isCSS1Compat
+        ? document.documentElement.scrollLeft
+        : document.body.scrollLeft;
+      
+    }
+  });
+});
+
+
+// Load More Button for Projects
+function loadMoreProjects(event) {
+  let moreProjectDiv = document.getElementById('more-projects');
+
+  if (moreProjectDiv.style.display === "none"){
+    moreProjectDiv.style.display = "flex";
+    event.target.innerHTML = "<span>&#8593;</span> Load Less";
+  }
+  else{
+    moreProjectDiv.style.display = "none";
+    event.target.innerHTML = "<span>&#8595;</span> Load More";
+
+  }
+}
