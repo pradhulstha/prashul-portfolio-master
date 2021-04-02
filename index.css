@@ -35,6 +35,7 @@
   --line-height-small: 1.2;
 
   --black: #000;
+  --hard-black: #141414;
   --soft-black: #1b1b1b;
   --softer-black: rgba(0, 0, 0, 0.705);
   --pink: #ff3258;
@@ -304,7 +305,7 @@ body:not(.user-is-tabbing) a:focus {
   height: 100%;
   z-index: -1;
   transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
-  -webkit-transition:  all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
+  -webkit-transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
 }
 
 .link__text:focus {
@@ -415,7 +416,6 @@ body:not(.user-is-tabbing) a:focus {
   background: var(--white);
   transition: all 0.25s cubic-bezier(1, 0.68, 0.16, 0.9);
   -webkit-transition: all 0.25s cubic-bezier(1, 0.68, 0.16, 0.9);
-
 }
 
 .nav__link:hover {
@@ -441,7 +441,7 @@ body:not(.user-is-tabbing) a:focus {
   background-color: var(--soft-black);
   z-index: 10;
   position: fixed;
-  opacity: 0.0;
+  opacity: 0;
   transition: all 0.7s linear;
   -webkit-transition: all 0.6s linear;
   visibility: hidden;
@@ -498,7 +498,6 @@ body:not(.user-is-tabbing) a:focus {
   color: inherit;
 }
 
-
 .vlt-menu-burger .line {
   display: block;
   margin-bottom: 5px;
@@ -546,7 +545,7 @@ body:not(.user-is-tabbing) a:focus {
 /* Sidebar Nav */
 
 .show__mobile-nav {
-  opacity: 1.0;
+  opacity: 1;
   width: 100%;
   height: 100%;
   visibility: visible;
@@ -619,16 +618,21 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .header {
-  background: linear-gradient(rgba(27, 27, 27, 0.1), rgba(27, 27, 27, 0.4)),
-    url("./images/header.jpg");
+  background: radial-gradient(
+      circle at right,
+      rgba(181, 177, 177, 0.08),
+      #00000070,
+      transparent
+    ),
+    url("./images/prashul-sitting.png");
   height: 100vh;
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
   background-attachment: fixed;
   font-size: var(--font-size-normal);
-  -webkit-background-size: cover;
-  -ms-background-size: cover;
-  -o-background-size: cover;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
 }
 
 .header__text {
@@ -741,6 +745,18 @@ body:not(.user-is-tabbing) a:focus {
 
 .about__photo-container {
   margin-bottom: var(--gutter-normal);
+  border-radius: 50%;
+  border: thick solid var(--soft-pink);
+  border-style: ridge;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  display: grid;
+}
+
+.about__photo {
+  border-radius: 50%;
+  mix-blend-mode: luminosity;
 }
 
 .about__text p a:hover {
@@ -822,15 +838,15 @@ body:not(.user-is-tabbing) a:focus {
 
 /* The actual content */
 .history__content {
-  background-color: #141414;
   position: relative;
   border-radius: 6px;
   border: thin solid #f0e9f2;
   transition: all 0.3s linear;
-  transition-delay: .1s;
+  transition-delay: 0.1s;
 }
 
 .history__content:hover {
+  background-color: #141414;
   border-color: #ff3258e5;
   box-shadow: 5px 3px 15px var(--softer-black);
   transform: translate(-1px, -6px);
@@ -858,16 +874,14 @@ body:not(.user-is-tabbing) a:focus {
   display: none;
 }
 
-
 .more__btn-holder {
   display: flex;
   justify-content: center;
   padding: 0;
   margin: 0;
-  background: linear-gradient(rgba(22, 22, 22, 0.9), rgba(68, 68, 68, 0.5));
+  background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(68, 68, 68, 0.36));
   padding: 5px 0;
   border-radius: 6px;
-  
 }
 .more__btn-holder .material-icons {
   background: transparent;
@@ -879,7 +893,6 @@ body:not(.user-is-tabbing) a:focus {
 .more__btn-holder .material-icons:hover {
   text-shadow: 1px 1px 8px var(--white-1);
 }
-
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 800px) {
@@ -929,9 +942,7 @@ body:not(.user-is-tabbing) a:focus {
   .more__btn-holder .material-icons {
     text-shadow: 1px 1px 8px var(--white-1);
   }
-
 }
-
 
 /* --------------------------------------- */
 /* ----- Job Content ----- */
@@ -952,7 +963,6 @@ body:not(.user-is-tabbing) a:focus {
 .job__container {
   margin-bottom: 1rem;
 }
-
 
 .job__info {
   display: grid;
@@ -1020,7 +1030,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .job__info p {
-  font-size: 2.0rem;
+  font-size: 2rem;
   font-family: Overpass Mono, monospace;
   letter-spacing: -0.85px;
   word-spacing: -3px;
@@ -1088,10 +1098,16 @@ body:not(.user-is-tabbing) a:focus {
 /* ----- Work ----- */
 /* --------------------------------------- */
 
+.work__boxes {
+  margin-bottom: var(--gutter-small);
+}
+
 .work__box {
-  display: flex;
+  display: flex !important;
   align-items: center;
   margin-bottom: var(--gutter-small-small);
+  border: none;
+  padding-bottom: 6%;
 }
 
 .work__box:nth-child(even) {
@@ -1108,11 +1124,16 @@ body:not(.user-is-tabbing) a:focus {
 
 .work__box:not(:last-child) {
   margin-bottom: var(--gutter-huge);
+  border-bottom: thin solid #575050;
 }
 
 @media (max-width: 500px) {
   .work__box:not(:last-child) {
     margin-bottom: var(--gutter-medium);
+  }
+
+  .work__box:nth-child(even) {
+    flex-direction: column-reverse;
   }
 }
 
@@ -1130,7 +1151,7 @@ body:not(.user-is-tabbing) a:focus {
   list-style-position: inside;
   margin-bottom: var(--gutter-normal);
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .work__list li {
@@ -1169,19 +1190,19 @@ body:not(.user-is-tabbing) a:focus {
   .image-right {
     margin: 0 0 0 10rem;
   }
-
 }
 
 .load-more__btn {
   display: inline;
   background-color: transparent;
   background: transparent;
-  border-radius: 3px;
+  border-radius: 20px 10px;
   border: thin solid var(--soft-pink);
   padding: 12px;
   color: var(--soft-pink);
   font-size: large;
-  left: 50%;
+  left: 40%;
+  text-decoration: none;
   position: relative;
   transition: all 0.3s ease-in;
   -webkit-transition: all 0.3s ease-in;
@@ -1197,13 +1218,19 @@ body:not(.user-is-tabbing) a:focus {
   -moz-transform: translate(-3px, -5px);
 }
 
-#more-projects {
+.more-projects {
   display: none;
 }
 
 @media (max-width: 900px) {
   .work__code {
     height: 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .load-more__btn {
+    left: 15%;
   }
 }
 

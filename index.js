@@ -95,7 +95,7 @@ document.querySelectorAll(".history__content").forEach(function (e) {
 
     if (dots.style.display === "none") {
       // The More Content is Shown
-      dots.style.display = "inline";
+      dots.style.display = "block";
       moreBtn.innerHTML = "keyboard_arrow_down";
       moreText.style.display = "none";
       window.scrollTo({
@@ -107,20 +107,20 @@ document.querySelectorAll(".history__content").forEach(function (e) {
       // The More Content is Hidden
       dots.style.display = "none";
       moreBtn.innerHTML = "keyboard_arrow_up";
-      moreText.style.display = "inline";
+      moreText.style.display = "block";
 
       // Get the Y & X Coordinates to scroll back after reading
       elePosY = supportPageOffset
         ? window.pageYOffset
         : isCSS1Compat
-        ? document.documentElement.scrollTop
-        : document.body.scrollTop;
+          ? document.documentElement.scrollTop
+          : document.body.scrollTop;
       elePosX = supportPageOffset
         ? window.pageXOffset
         : isCSS1Compat
-        ? document.documentElement.scrollLeft
-        : document.body.scrollLeft;
-      
+          ? document.documentElement.scrollLeft
+          : document.body.scrollLeft;
+
     }
   });
 });
@@ -128,15 +128,16 @@ document.querySelectorAll(".history__content").forEach(function (e) {
 
 // Load More Button for Projects
 function loadMoreProjects(event) {
-  let moreProjectDiv = document.getElementById('more-projects');
+  var moreProjectDiv = document.getElementsByClassName('more-projects');
 
-  if (moreProjectDiv.style.display === "none"){
-    moreProjectDiv.style.display = "flex";
-    event.target.innerHTML = "<span>&#8593;</span> Load Less";
+  for (let i = 0; i < moreProjectDiv.length; i++) {
+    moreProjectDiv[i].classList.toggle('work__box');
   }
-  else{
-    moreProjectDiv.style.display = "none";
-    event.target.innerHTML = "<span>&#8595;</span> Load More";
 
+  if (moreProjectDiv[0].style.display === 'none') {
+    event.target.innerHTML = "<span>&#8593;</span> Less";
+  }
+  else {
+    event.target.innerHTML = "<span>&#8595;</span> More";
   }
 }
