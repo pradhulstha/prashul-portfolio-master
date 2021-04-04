@@ -98,16 +98,24 @@ document.querySelectorAll(".history__content").forEach(function (e) {
       dots.style.display = "block";
       moreBtn.innerHTML = "keyboard_arrow_down";
       moreText.style.display = "none";
-      window.scrollTo({
-        top: elePosY,
-        left: elePosX,
-        behavior: "smooth",
-      });
+
+      // Re-position the scroll pos to opening card
+      let currPosY = supportPageOffset
+        ? window.pageYOffset
+        : isCSS1Compat
+          ? document.documentElement.scrollTop
+          : document.body.scrollTop;
+      if (currPosY > elePosY)
+        window.scrollTo({
+          top: elePosY,
+          left: elePosX,
+          behavior: "smooth",
+        });
     } else {
       // The More Content is Hidden
       dots.style.display = "none";
       moreBtn.innerHTML = "keyboard_arrow_up";
-      moreText.style.display = "block";
+      moreText.style.display = "grid";
 
       // Get the Y & X Coordinates to scroll back after reading
       elePosY = supportPageOffset
