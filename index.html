@@ -12,6 +12,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Accept-CH" content="Viewport-Width, Width" />
   <link rel="canonical" href="https:prashulshrestha.me" />
   <link rel="shortcut icon" type="image/png" href="./images/favicon_io/favicon.ico" />
 
@@ -43,7 +44,7 @@
   <meta name="twitter:domain" content="$site_url">
 
   <meta http-equiv="Cache-control" content="public">
-  
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Animation -->
   <link rel="stylesheet" type="text/css"
@@ -59,7 +60,8 @@
     <div class="row nav__bar">
       <div class="nav__logo">
         <a href="#">
-          <img src="./images/PS LOGO.svg" height="auto" width="100%" />
+          <embed alt="Logo" width="100%" height="auto" src="./images/PS LOGO.svg">
+
         </a>
       </div>
       <div class="sidebar-toggle">
@@ -126,9 +128,8 @@
         </li> 
         -->
         <li class="footer__social-link-item">
-          <a href=https://www.linkedin.com/in/prashul-shrestha/">
-            <img src="./images/linkedin.svg" title="Link to LinkedIn Profile" class="footer__social-image"
-              alt="LinkedIn">
+          <a href=https://www.linkedin.com/in/prashul-shrestha/"> <img src="./images/linkedin.svg"
+              title="Link to LinkedIn Profile" class="footer__social-image" alt="LinkedIn">
           </a>
         </li>
       </ul>
@@ -161,7 +162,7 @@
                 I'm building rather than the tech stack. -->
               </p>
               <!-- Provide a link to your resume -->
-              <a href="./docs/Resume January 2021 Prashul.pdfs" class="btn">My Resume</a>
+              <a href="./docs/Shrestha_Prashul_Sep2021.pdf" class="btn">My Resume</a>
             </div>
 
             <div class="about__photo-container">
@@ -224,6 +225,74 @@
           <h2>Experience</h2>
           <div class="history__timeline">
 
+            <!-- Medtronic JOB -->
+            <div class="history__container right">
+              <div class="history__content">
+                <div class="content">
+                  <h3>
+                    <l>Full-Time Job 💼</l>
+                  </h3>
+                  <div class="job__container">
+                    <div id="medtronic" class="job__title">
+                      <h3>Medtronic</h3>
+                    </div>
+                    <div class="job__info">
+                      <p class="job__time"><span class="icon material-icons" id="date">date_range</span>June 2021 -
+                        Present</p>
+                      <p class="job__loc"><span class="icon material-icons" id="date">pin_drop</span>Minneapolis, MN</p>
+                      <p class="job__url"><span class="icon material-icons" id="link">launch</span> <a
+                          href="https://www.medtronic.com" target="_blank">medtronic.com</a></p>
+                      <p class="job__degree"><span class="icon material-icons" id="star">star_outline</span>IT
+                        Jr. Full Stack Developer 👨🏽‍💻</p>
+                    </div>
+                    <p class="job__description">Medtronic is a global leader in medical technology, services, and
+                      solutions. We collaborate with others to take on healthcare's greatest challenges.</p>
+                    <span id="dots">...</span>
+                    <span id="more-points">
+                      <ul class="job__content">
+                        <li>Incorporated Material UI to redesign the webstie which improved the time on page for the
+                          user by 6 mins.</li>
+                        <li>Built resuable intelligent search functionality for 1GB+ Json files leading to an increase
+                          in efficiency by 22%.</li>
+                        <li>Optimized company’s complaint handling process by creating and delivering efficient
+                          app-based solution.</li>
+                      </ul>
+                      <ul class="work__list">
+                        <li>
+                          <img alt="VueJS" width="26px" src="./images/tech-stacks/VueJS.png" />
+                        </li>
+                        <li>
+                          <img alt="PostgreSQL" width="26px" src="./images/tech-stacks/postgreSQL.png" />
+                        </li>
+                        <li>
+                          <img alt="PostgREST API" width="26px" src="./images/tech-stacks/postgRest.png" />
+                        </li>
+                        <li>
+                          <img alt="Node.js" width="36px"
+                            src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/aws/aws.png" />
+                        </li>
+                        <li>
+                          <img alt="Visual Studio Code" width="32px"
+                            src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png" />
+                        </li>
+                        <li>
+                          <img alt="HTML5" width="26px"
+                            src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />
+                        </li>
+                        <li>
+                          <img alt="GitHub" width="26px"
+                            src="https://raw.githubusercontent.com/github/explore/78df643247d429f6cc873026c0622819ad797942/topics/github/github.png" />
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                </div>
+                <div class="more__btn-holder">
+                  <span class="material-icons" id="more-btn">keyboard_arrow_down</span>
+                </div>
+              </div>
+            </div>
+
             <!-- ON-CAMPUS JOB -->
             <div class="history__container right">
               <div class="history__content">
@@ -237,7 +306,7 @@
                     </div>
                     <div class="job__info">
                       <p class="job__time"><span class="icon material-icons" id="date">date_range</span>November 2019 -
-                        Present</p>
+                        May 2021</p>
                       <p class="job__loc"><span class="icon material-icons" id="date">pin_drop</span>St. Cloud, MN</p>
                       <p class="job__url"><span class="icon material-icons" id="link">launch</span> <a
                           href="https://www.stcloudstate.edu/its/huskytech/" target="_blank">scsu.edu</a></p>
@@ -287,7 +356,6 @@
                   <span class="material-icons" id="more-btn">keyboard_arrow_down</span>
                 </div>
               </div>
-
             </div>
 
             <!-- RBC WEALTH MANAGEMENT INTERNSHIP -->
@@ -672,9 +740,8 @@
           </a>
         </li> -->
         <li class="footer__social-link-item">
-          <a href=https://www.linkedin.com/in/prashul-shrestha/">
-            <img src="./images/linkedin.svg" title="Link to LinkedIn Profile" class="footer__social-image"
-              alt="LinkedIn">
+          <a href=https://www.linkedin.com/in/prashul-shrestha/"> <img src="./images/linkedin.svg"
+              title="Link to LinkedIn Profile" class="footer__social-image" alt="LinkedIn">
           </a>
         </li>
       </ul>

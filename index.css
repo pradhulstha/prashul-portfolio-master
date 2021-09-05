@@ -922,18 +922,34 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 @media screen and (max-width: 600px) {
+  .history__timeline{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: visible;
+    flex-wrap: nowrap; 
+  }
+  .history__timeline::after {
+    display: none;
+  }
+  .history__container::after {
+    display: none;
+  }
   .timeline::after {
     left: 31px;
+    display: none;
   }
 
   /* Full-width containers */
   .history__container {
-    padding-left: 40px;
-    padding-right: 25px;
+    padding: 20px 10px;
   }
-
+  .history__content {
+    width: 300px;
+  }
   .content {
-    overflow: hidden;
+    height: 400px;
+    overflow: scroll;
   }
 
   /* Make sure that all arrows are pointing leftwards */
@@ -947,6 +963,7 @@ body:not(.user-is-tabbing) a:focus {
   /* Make sure all circles are at the same spot */
   .right::after {
     left: 15px;
+    display: none;
   }
 
   /* Make all right containers behave like the left ones */
@@ -958,7 +975,9 @@ body:not(.user-is-tabbing) a:focus {
   .right::after {
     left: 1px;
   }
-
+  .right::before{
+    display: none;
+  }
   .more__btn-holder .material-icons {
     text-shadow: 1px 1px 8px var(--white-1);
   }
@@ -967,6 +986,11 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Job Content ----- */
 /* --------------------------------------- */
+#medtronic {
+  background-image: url(./images/medtronic.png);
+  padding-left: 5.8rem;
+  background-size: 5.5rem 2.5rem;
+}
 
 #scsu {
   background-image: url(./images/scsu.png);
@@ -1032,7 +1056,6 @@ body:not(.user-is-tabbing) a:focus {
   padding-left: 4.8rem;
   background-repeat: no-repeat;
   background-size: 3.5rem 3.5rem;
-  background-position: left center;
 }
 
 .job__content {
